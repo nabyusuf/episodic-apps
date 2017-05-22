@@ -2,9 +2,9 @@ package com.example.episodicevents.events;
 
 import com.example.episodicevents.repo.EventsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * Created by trainer3 on 5/22/17.
@@ -22,8 +22,9 @@ public class EventsController {
     }
 
     @GetMapping("recent")
-    public List<EpisodicEvent> getRecentEvent(){
-        return this.repository.findAll();
+    public Page<EpisodicEvent> getRecentEvent(){
+
+        return this.repository.findAll(new PageRequest(0, 20));
     }
 
 }
