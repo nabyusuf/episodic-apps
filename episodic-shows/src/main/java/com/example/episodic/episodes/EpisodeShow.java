@@ -14,9 +14,6 @@ public class EpisodeShow {
 
     private int episodeNumber;
 
-    @Transient
-    @JsonInclude
-    private String title;
 
     public EpisodeShow() {
     }
@@ -34,10 +31,7 @@ public class EpisodeShow {
     public void setEpisodeNumber(int episodeNumber) { this.episodeNumber = episodeNumber; }
 
     public String getTitle() {
-        title = "S"+this.seasonNumber+" E"+this.episodeNumber;
-        return this.title;
+        return "S"+this.seasonNumber+" E"+this.episodeNumber;
     }
 
-    public void setTitle(String title) {
-        this.title = title; }
 }

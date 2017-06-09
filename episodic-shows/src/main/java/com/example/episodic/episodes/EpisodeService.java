@@ -31,7 +31,6 @@ public class EpisodeService {
         episodeShow.setId(episodes1.getId());
         episodeShow.setEpisodeNumber(episodes1.getEpisodeNumber());
         episodeShow.setSeasonNumber(episodes1.getSeasonNumber());
-        episodeShow.setTitle(episodeShow.getTitle());
 
         return episodeShow;
     }
@@ -46,7 +45,6 @@ public class EpisodeService {
             episodeShow.setId(e.getId());
             episodeShow.setEpisodeNumber(e.getEpisodeNumber());
             episodeShow.setSeasonNumber(e.getSeasonNumber());
-            episodeShow.setTitle(episodeShow.getTitle());
             episodeShowList.add(episodeShow);
         }
 

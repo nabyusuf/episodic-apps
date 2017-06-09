@@ -22,8 +22,6 @@ public class Episodes {
 
     private int episodeNumber;
 
-//    @ManyToOne
-//    @JoinColumn(name="show_id")
     public long getShowId() {
         return this.shows.getId();
     }

@@ -1,5 +1,6 @@
 package com.example.episodic.shows;
 
+import com.example.episodic.MyTestBaseClass;
 import com.example.episodic.episodes.Episodes;
 import com.example.episodic.episodes.EpisodesRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,6 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -35,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
-public class ShowsControllerTest {
+public class ShowsControllerTest extends MyTestBaseClass{
 
     @Autowired
     ShowsRepository repository;
@@ -47,8 +49,6 @@ public class ShowsControllerTest {
     MockMvc mvc;
 
     private Shows showsInit;
-    private Episodes episodesInit1;
-    private Episodes episodesInit2;
 
     @Before
     public void setup(){
@@ -59,12 +59,12 @@ public class ShowsControllerTest {
 
         Episodes episodes1 = new Episodes(showsInit,1,2);
         Episodes episodes2 = new Episodes(showsInit,1,3);
-        episodesInit1=episodesRepository.save(episodes1);
-        episodesInit2=episodesRepository.save(episodes2);
+        episodesRepository.save(episodes1);
+        episodesRepository.save(episodes2);
     }
 
     @After
-    public void tearDown(){
+    public void destructor(){
         repository.deleteAll();
         episodesRepository.deleteAll();
     }
@@ -158,4 +158,5 @@ public class ShowsControllerTest {
                 .andExpect(jsonPath("$.[0].title", equalTo("S1 E2")))
                 .andExpect(jsonPath("$.[1].title", equalTo("S1 E3")));
     }
+
 }
