@@ -25,7 +25,7 @@ public class ScrubEvent extends EpisodicEvent {
         this.data = data;
     }
 
-    public ScrubEvent(int userId, int showId, int episodeId, Date createdAt, ScrubOffsetData data) {
+    public ScrubEvent(Long userId, Long showId, Long episodeId, Date createdAt, ScrubOffsetData data) {
         super(userId, showId, episodeId, createdAt);
         this.data = data;
     }

@@ -25,7 +25,7 @@ public class ProgressEvent extends EpisodicEvent{
         this.data = data;
     }
 
-    public ProgressEvent(int userId, int showId, int episodeId, Date createdAt, Data data) {
+    public ProgressEvent(Long userId, Long showId, Long episodeId, Date createdAt, Data data) {
         super(userId, showId, episodeId, createdAt);
         this.data = data;
     }

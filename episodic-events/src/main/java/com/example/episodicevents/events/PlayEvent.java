@@ -25,7 +25,7 @@ public class PlayEvent extends EpisodicEvent {
         this.data = data;
     }
 
-    public PlayEvent(int userId, int showId, int episodeId, Date createdAt, Data data) {
+    public PlayEvent(Long userId, Long showId, Long episodeId, Date createdAt, Data data) {
         super(userId, showId, episodeId, createdAt);
         this.data = data;
     }

@@ -25,7 +25,7 @@ public class PauseEvent extends EpisodicEvent{
         this.data = data;
     }
 
-    public PauseEvent(int userId, int showId, int episodeId, Date createdAt, Data data) {
+    public PauseEvent(Long userId, Long showId, Long episodeId, Date createdAt, Data data) {
         super(userId, showId, episodeId, createdAt);
         this.data = data;
     }

@@ -26,7 +26,7 @@ public class RewindEvent extends EpisodicEvent {
         this.data = data;
     }
 
-    public RewindEvent(int userId, int showId, int episodeId, Date createdAt, SpeedOffsetData data) {
+    public RewindEvent(Long userId, Long showId, Long episodeId, Date createdAt, SpeedOffsetData data) {
         super(userId, showId, episodeId, createdAt);
         this.data = data;
     }

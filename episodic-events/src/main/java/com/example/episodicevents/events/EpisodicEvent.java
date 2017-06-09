@@ -33,9 +33,9 @@ public class EpisodicEvent {
     private String id;
 
     //private String type;
-    private int userId;
-    private int showId;
-    private int episodeId;
+    private Long userId;
+    private Long showId;
+    private Long episodeId;
     private Date createdAt;
 
 
@@ -43,7 +43,7 @@ public class EpisodicEvent {
         return "event";
     }
 
-    public EpisodicEvent(int userId, int showId, int episodeId, Date createdAt) {
+    public EpisodicEvent(Long userId, Long showId, Long episodeId, Date createdAt) {
         this.userId = userId;
         this.showId = showId;
         this.episodeId = episodeId;

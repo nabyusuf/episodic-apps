@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
 @SpringBootTest
-public class EventsPostTest {
+public class EventsPostTest extends MyTestBaseClass {
 
     @Autowired
     MockMvc mvc;
@@ -43,7 +43,7 @@ public class EventsPostTest {
     }
 
     @After
-    public void tearDown(){
+    public void kill(){
         repository.deleteAll();
     }
 

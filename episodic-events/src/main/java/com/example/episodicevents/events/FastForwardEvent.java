@@ -26,8 +26,9 @@ public class FastForwardEvent extends EpisodicEvent {
         this.data = data;
     }
 
-    public FastForwardEvent(int userId, int showId, int episodeId, Date createdAt, SpeedOffsetData data) {
+    public FastForwardEvent(Long userId, Long showId, Long episodeId, Date createdAt, SpeedOffsetData data) {
         super(userId, showId, episodeId, createdAt);
         this.data = data;
     }
+
 }
